@@ -125,20 +125,20 @@ function loadPlayersPage(){
 
 function switchPlayers(playerNum){
 	var player = players[playerNum];
-	var year = player.year
-	var num = 0;
-	if (year == "Freshman"){
-		num = 1;
-	}
-	else if (year == "Sophomore"){
-		num = 2;
-	}
-	else if (year == "Junior"){
-		num = 3;
-	}
-	else if (year == "Senior"){
-		num = 4;
-	}
+	// var year = player.year
+	// var num = 0;
+	// if (year == "Freshman"){
+	// 	num = 1;
+	// }
+	// else if (year == "Sophomore"){
+	// 	num = 2;
+	// }
+	// else if (year == "Junior"){
+	// 	num = 3;
+	// }
+	// else if (year == "Senior"){
+	// 	num = 4;
+	// }
 	document.getElementById("p_year").innerHTML = player.year;
 	document.getElementById("p_major").innerHTML = player.major;
 	document.getElementById("g_played").innerHTML = player.games_played;
@@ -148,9 +148,9 @@ function switchPlayers(playerNum){
 	document.getElementById("r_yards").innerHTML = player.rushing_yards;
 	document.getElementById("rec_yards").innerHTML = player.receiving_yards;
 
-	document.getElementById("avg_p_yards").innerHTML = Math.floor(player.pass_yards / num);
-	document.getElementById("avg_r_yards").innerHTML = Math.floor(player.rushing_yards / num);
-	document.getElementById("avg_rec_yards").innerHTML = Math.floor(player.receiving_yards / num);
+	document.getElementById("avg_p_yards").innerHTML = Math.floor(player.pass_yards / player.games_played);
+	document.getElementById("avg_r_yards").innerHTML = Math.floor(player.rushing_yards / player.games_played);
+	document.getElementById("avg_rec_yards").innerHTML = Math.floor(player.receiving_yards / player.games_played);
 
 }
 /*
